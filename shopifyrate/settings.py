@@ -140,6 +140,7 @@ LOGIN_URL = 'https://shopifyrate.herokuapp.com/login/'
 # This ensures that correct 'https' URLs are generated when our Django app is running behind a proxy like nginx, or is
 # being tunneled (by ngrok, for example).
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Use the Shopify Auth user model.
 AUTH_USER_MODEL = 'shopifyrate_app.AuthAppShopUser'
 
