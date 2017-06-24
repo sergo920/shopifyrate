@@ -130,7 +130,7 @@ SHOPIFY_APP_DEV_MODE = False
 SHOPIFY_APP_NAME = 'Rate'
 SHOPIFY_APP_API_KEY = '26fa87e06de227bd244565aab90fd781'
 SHOPIFY_APP_API_SECRET = '4f172633d87fa04348941782772e8764'
-SHOPIFY_APP_API_SCOPE = ['read_products', 'create_products']
+SHOPIFY_APP_API_SCOPE = ['read_products', 'write_products', 'read_orders']
 # Use the Shopify Auth authentication backend as the sole authentication backend.
 AUTHENTICATION_BACKENDS = ['shopifyrate_app.backends.ShopUserBackend']
 # Set the login redirect URL to the "home" page for your app (where to go after logging on).
@@ -139,7 +139,6 @@ LOGIN_URL = 'https://shopifyrate.herokuapp.com/login/'
 # Set secure proxy header to allow proper detection of secure URLs behind a proxy.
 # This ensures that correct 'https' URLs are generated when our Django app is running behind a proxy like nginx, or is
 # being tunneled (by ngrok, for example).
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Use the Shopify Auth user model.
 AUTH_USER_MODEL = 'shopifyrate_app.AuthAppShopUser'

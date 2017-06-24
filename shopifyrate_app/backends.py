@@ -12,14 +12,14 @@ class ShopUserBackend(RemoteUserBackend):
         if not user:
             return
 
-        # if user.email is None:
-        #     with shopify.Session.temp(myshopify_domain, token):
-        #         shop = shopify.Shop.current()
-        #         user.email = shop.to_dict().get('email')
-        #         user.token = token
-        #         user.save(update_fields=['token', 'email'])
-        # else:
-        user.token = token
-        user.save(update_fields=['token'])
+        if user.email is None:
+            with shopify.Session.temp(myshopify_domain, token):
+                shop = shopify.Shop.current()
+                user.email = shop.to_dict().get('email')
+                user.token = token
+                user.save(update_fields=['token', 'email'])
+        else:
+            user.token = token
+            user.save(update_fields=['token'])
 
         return user
