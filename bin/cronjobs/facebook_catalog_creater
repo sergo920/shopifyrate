@@ -1,0 +1,1 @@
+*/10 * * * * /opt/kilometer/shopify-marko/venv/bin/python3.4 /opt/kilometer/shopify-marko/carousel/carousel_app/catalog_creator/catalog_create.py > /tmp/catalog_create.log 2>&1

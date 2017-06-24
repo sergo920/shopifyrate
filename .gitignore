@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+shopifyrate/__pycache__/
+shopifyrate_app/__pycache__/
+venv/

@@ -1,0 +1,7 @@
+django
+django-cors-headers
+djangorestframework
+django-shopify-auth
+Gunicorn
+whitenoise
+psycopg2

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="carouselApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rate</title>
+    <script type="text/javascript" src="//cdn.shopify.com/s/assets/external/app.js"></script>
+    <script type="text/javascript">
+        ShopifyApp.init({
+            apiKey: '{{ SHOPIFY_APP_API_KEY }}',
+            shopOrigin: 'https://{{ user.myshopify_domain }}'
+        });
+        ShopifyApp.ready(function() {
+            ShopifyApp.Bar.initialize({
+                title: '{{ SHOPIFY_APP_NAME }}',
+                buttons: {}
+            });
+        });
+    </script>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+</head>
+<body>
+   <h1>Hello Rate</h1>
+</body>
+</html>
