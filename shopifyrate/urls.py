@@ -8,4 +8,4 @@ from . import views
 urlpatterns = [
     url(r'^healthcheck$', views.health_check),
     url(r'^', include(shopifyrate_app_urls)),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

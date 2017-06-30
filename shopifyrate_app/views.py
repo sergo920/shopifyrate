@@ -8,10 +8,12 @@ from shopify_auth.decorators import login_required
 
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    # return render(request, 'index.html')
     try:
+        print('before read index')
         with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
-            return JsonResponse({'dfsdfsf': 'fdsfdsfdsf'}, safe=False)
+            # return JsonResponse({'dfsdfsf': 'fdsfdsfdsf'}, safe=False)
+            print('trying read index')
             return HttpResponse(f.read())
     except FileNotFoundError:
         logging.exception('Production build of app not found')
