@@ -104,10 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
-# STATICFILES_DIRS = [
-#     os.path.join(REACT_APP_DIR, 'build', 'static'),
-# ]
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -126,7 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(REACT_APP_DIR, 'build')
+STATIC_ROOT = os.path.join(REACT_APP_DIR, 'build', 'static')
 SHOPIFY_APP_IS_EMBEDDED = True
 SHOPIFY_APP_DEV_MODE = False
 SHOPIFY_APP_NAME = 'Rate'
