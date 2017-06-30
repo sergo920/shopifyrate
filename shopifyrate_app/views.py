@@ -12,12 +12,11 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 def index(request):
     path = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
     try:
-        with open('/frontend/build/index.html') as f:
+        with open('/static/index.html') as f:
             return HttpResponse(f.read())
     except FileNotFoundError as e:
         logging.exception('Production build of app not found')
         return HttpResponse(
-            staticfiles_storage.url(path),
-
+            'Production build of app not found',
             status=501,
         )
