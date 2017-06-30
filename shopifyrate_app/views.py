@@ -1,5 +1,6 @@
 import os
 import logging
+from django.shortcuts import render
 from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from shopify_auth.decorators import login_required
@@ -7,6 +8,7 @@ from shopify_auth.decorators import login_required
 
 @login_required
 def index(request):
+    render(request, 'index.html')
     try:
         with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
             return JsonResponse({'dfsdfsf': 'fdsfdsfdsf'}, safe=False)
