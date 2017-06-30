@@ -19,6 +19,6 @@ def index(request):
     except FileNotFoundError as e:
         logging.exception('Production build of app not found')
         return HttpResponse(
-            str(e) + '  ######' + path,
+            str(e) + '  ######' + settings.BASE_DIR + ' ###' + settings.REACT_APP_DIR,
             status=501,
         )
