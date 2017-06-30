@@ -8,7 +8,7 @@ from shopify_auth.decorators import login_required
 
 @login_required
 def index(request):
-    return render(request, 'index.html')
+    # return render(request, 'index.html')
     path = os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')
     try:
         print('before read index')
