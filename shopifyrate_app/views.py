@@ -14,8 +14,8 @@ def index(request):
     except FileNotFoundError as e:
         logging.exception('Production build of app not found')
         return HttpResponse(
-            [os.path.join(settings.ROOT_PATH, o) for o in os.listdir(settings.ROOT_PATH)
-             if os.path.isdir(os.path.join(settings.ROOT_PATH, o))],
+            [os.path.join(settings.BASE_DIR, o) for o in os.listdir(settings.BASE_DIR)
+             if os.path.isdir(os.path.join(settings.BASE_DIR, o))],
 
             status=501,
         )
