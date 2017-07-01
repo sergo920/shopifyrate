@@ -4,6 +4,11 @@ import ImageGallery from 'react-image-gallery';
 
 class Images extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {images: []};
+    }
+
     getInitialState() {
         return {
             images: []
@@ -12,7 +17,8 @@ class Images extends Component {
 
     componentWillMount() {
         axios.get('/shopify/products/')
-            .then(function(response){
+            .then(function(response) {
+                console.log(response.data.images);
                 this.setState({images: response.data.images});
             }.bind(this));
     };
