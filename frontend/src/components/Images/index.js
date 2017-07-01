@@ -9,12 +9,6 @@ class Images extends Component {
         this.state = {images: []};
     }
 
-    getInitialState() {
-        return {
-            images: []
-        };
-    };
-
     componentWillMount() {
         axios.get('/shopify/products/')
             .then(function(response) {

@@ -16,7 +16,9 @@ class Root extends Component {
                     <h2>Welcome to React</h2>
                 </div>
 
-                <Images/>
+                <div className="Images">
+                    <Images/>
+                </div>
             </div>
         );
     }
