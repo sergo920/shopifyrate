@@ -9,8 +9,8 @@ from django.http import HttpResponse
 
 @login_required
 def index(request):
-    path = staticfiles_storage.url('build/index.html')
-    with open(path) as f:
+    # path = staticfiles_storage.url('build/index.html')
+    with open('/app/static/build/index.html') as f:
         return HttpResponse(f.read())
 
     return HttpResponse(url)
