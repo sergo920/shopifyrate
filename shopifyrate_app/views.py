@@ -14,7 +14,7 @@ def index(request):
     for root, dirs, files in list_dirs:
         for d in dirs:
             dire.append(os.path.join(root, d))
-    
+
 
     return JsonResponse(dire, safe=False)
 
