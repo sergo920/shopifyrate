@@ -3,7 +3,7 @@
 shopifyrate/__pycache__/
 shopifyrate_app/__pycache__/
 venv/
-frontend/node_modules
+static/node_modules
 .gitignore
 README.md
 package.json
