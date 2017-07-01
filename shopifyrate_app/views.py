@@ -25,7 +25,7 @@ def get_shopify_products(request):
         while True:
             products = shopify.Product.find(page=page, limit=250, fields=fields)
             if products:
-                data += products
+                data += [product.to_dict() for product in products]
                 page += 1
             else:
                 break
