@@ -14,7 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# React application directory
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -102,12 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
-
-# STATICFILES_DIRS = [
-#     os.path.join(REACT_APP_DIR, 'build', 'static'),
-# ]
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -127,6 +122,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(REACT_APP_DIR, 'build', 'static')
+# Facebook credentials
+FACEBOOK_APP_ID = '269457056812449'
+FACEBOOK_APP_SECRET = 'bcaf9d9d002325a7cb219e98d61da10c'
+FACEBOOK_MAIN_AD_ACCOUNT = 'act_114787645721020'
+FACEBOOK_TEST_TOKEN = 'EAAD1EdwnTaEBANzXYTKbtYbckISEbLZCh9BLsVnqohfBGTP76CapBHZC8UeeKTyUBx8KNB8IJEQZBHzmRhNOPfTLEQLcyBf' \
+                      '7LNpsaNcZAO69AnIasyboZBnSIKgFcXE9XdusJPZAzvM73z5BHh9tFx6lylJutualTGVMDZARD6iu5v5dc6Bo9u0WGY4AqVFfm0ZD'
+
+# Shopify integration
 SHOPIFY_APP_IS_EMBEDDED = True
 SHOPIFY_APP_DEV_MODE = False
 SHOPIFY_APP_NAME = 'Rate'

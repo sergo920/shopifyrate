@@ -5,3 +5,4 @@ django-shopify-auth
 Gunicorn
 whitenoise
 psycopg2
+facebookads

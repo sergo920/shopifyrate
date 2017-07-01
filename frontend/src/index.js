@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import promise from "redux-promise";
 
 import reducers from "./reducers";
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import Root from "./components/Root";
 
@@ -25,4 +25,4 @@ ReactDom.render(
   document.getElementById("root")
 );
 
-registerServiceWorker();
+// registerServiceWorker();
