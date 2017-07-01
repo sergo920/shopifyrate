@@ -9,7 +9,14 @@ from django.http import HttpResponse, JsonResponse
 
 @login_required
 def index(request):
-    return JsonResponse([os.path.join(settings.BASE_DIR,fn) for fn in next(os.walk(settings.BASE_DIR))[2]], safe=False)
+    dire = []
+    list_dirs = os.walk(settings.BASE_DIR)
+    for root, dirs, files in list_dirs:
+        for d in dirs:
+            dire.append(os.path.join(root, d))
+    
+
+    return JsonResponse(dire, safe=False)
 
     # path = staticfiles_storage.url('build/index.html')
     with open('/app/static/build/index.html') as f:
