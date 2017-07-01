@@ -38,13 +38,13 @@ def get_shopify_products(request):
 @login_required
 def create_video(request):
     FacebookAdsApi.init(account_id=settings.FACEBOOK_MAIN_AD_ACCOUNT, access_token=settings.FACEBOOK_TEST_TOKEN)
-    # ad_video = AdAccount(fbid=settings.FACEBOOK_MAIN_AD_ACCOUNT).create_ad_video(params={
-    #     AdVideo.Field.slideshow_spec: {
-    #         'images_urls': [
-    #             'https://www.downtownrochestermn.com/_files/images/sbs15tkssblue[1].png',
-    #             'http://d3sdoylwcs36el.cloudfront.net/VEN-virtual-enterprise-network-business-opportunities-small-fish_id799929_size485.jpg',
-    #             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmvDxaUoi9wsAm2H0qvdaCn8ISnkqOPSBDojx7WznZLoAMhvW_mjI7Pw'
-    #         ]
-    #     }
-    # })
-    return JsonResponse(AdAccount(fbid=settings.FACEBOOK_MAIN_AD_ACCOUNT).export_all_data(), safe=False)
+    ad_video = AdAccount(fbid=settings.FACEBOOK_MAIN_AD_ACCOUNT).create_ad_video(params={
+        AdVideo.Field.slideshow_spec: {
+            'images_urls': [
+                'https://www.downtownrochestermn.com/_files/images/sbs15tkssblue[1].png',
+                'http://d3sdoylwcs36el.cloudfront.net/VEN-virtual-enterprise-network-business-opportunities-small-fish_id799929_size485.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmvDxaUoi9wsAm2H0qvdaCn8ISnkqOPSBDojx7WznZLoAMhvW_mjI7Pw'
+            ]
+        }
+    })
+    return JsonResponse(ad_video.export_all_data(), safe=False)
