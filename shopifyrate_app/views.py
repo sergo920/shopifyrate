@@ -12,9 +12,9 @@ def index(request):
 
 
 @login_required
-def shopify_products(request):
+def get_shopify_products(request):
     """
-    view func returns all user products
+    view func returns all Shopify user products
     :param request:
     :return:
     """
