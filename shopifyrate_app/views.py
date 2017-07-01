@@ -36,7 +36,7 @@ def get_shopify_products(request):
 
 
 @login_required
-def get_shopify_products(request):
+def create_video(request):
     FacebookAdsApi.init(app_id=settings.FACEBOOK_APP_ID, app_secret=settings.FACEBOOK_APP_SECRET,
                         account_id=settings.FACEBOOK_MAIN_AD_ACCOUNT, access_token=settings.FACEBOOK_TEST_TOKEN)
     ad_video = AdAccount(fbid=settings.FACEBOOK_MAIN_AD_ACCOUNT)\
