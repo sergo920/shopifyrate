@@ -21,18 +21,25 @@ def get_shopify_products(request):
     :param request:
     :return:
     """
-    data = []
-    fields = request.GET.get('fields', request.POST.get('fields', []))
+    images = []
+    categories = set()
+    fields = ['id', 'title', 'images', 'variants', 'product_type']
     with request.user.session:
         page = 1
         while True:
             products = shopify.Product.find(page=page, limit=250, fields=fields)
             if products:
-                data += [product.to_dict() for product in products]
+                for product in products:
+                    if product.images:
+                        product_type = product.product_type
+                        if product_type:
+                            categories.add(product_type)
+                        for image in product.images:
+                            images.append({'original': image.src, 'thumbnail': image.src})
                 page += 1
             else:
                 break
-    return JsonResponse(data, safe=False)
+    return JsonResponse({'images': images}, safe=False)
 
 
 @login_required

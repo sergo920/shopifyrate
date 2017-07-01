@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import logo from '../../images/logo.svg';
 import '../../style/index.css';
 import '../../style/App.css';
+import 'react-image-gallery/styles/css/image-gallery.css';
+
+import Images from '../Images';
 
 class Root extends Component {
     componentWillMount() {
@@ -21,9 +24,7 @@ class Root extends Component {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h2>Welcome to React</h2>
                 </div>
-                <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <Images/>
             </div>
         );
     }
