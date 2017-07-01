@@ -6,4 +6,3 @@ venv/
 frontend/node_modules/
 .gitignore
 README.md
-package.json
