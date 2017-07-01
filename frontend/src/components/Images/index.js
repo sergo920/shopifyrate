@@ -14,7 +14,7 @@ class Images extends Component {
         axios.get('/shopify/products/')
             .then(function(response){
                 this.setState({images: response.data.images});
-            });
+            }.bind(this));
     };
 
     handleImageLoad(event) {
