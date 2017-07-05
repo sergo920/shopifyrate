@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import logo from '../../images/logo.svg';
 import '../../style/index.css';
 import '../../style/App.css';
-import 'react-image-gallery/styles/css/image-gallery.css';
+// import 'react-image-gallery/styles/css/image-gallery.css';
 
-import Images from '../Images';
+// import Images from '../Images';
 
 class Root extends Component {
     render() {
@@ -17,7 +17,7 @@ class Root extends Component {
                 </div>
 
                 <div className="Images">
-                    <Images/>
+                    {/*<Images/>*/}
                 </div>
             </div>
         );
