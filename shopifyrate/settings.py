@@ -121,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(REACT_APP_DIR, 'build', 'static')
+STATIC_ROOT = os.path.join(REACT_APP_DIR, 'build')
 # Facebook credentials
 FACEBOOK_APP_ID = '269457056812449'
 FACEBOOK_APP_SECRET = 'bcaf9d9d002325a7cb219e98d61da10c'
