@@ -1,11 +1,23 @@
 import os
+import json
 import shopify
+import requests
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from shopify_auth.decorators import login_required
 from facebookads.api import FacebookAdsApi
-from facebookads.adobjects.advideo import AdVideo
+from facebookads.api import FacebookRequest
 from facebookads.adobjects.adaccount import AdAccount
+
+from .models import AuthAppShopUser
+
+
+FACEBOOK_PARAMS = {
+    'grant_type': 'fb_exchange_token',
+    'client_id': '1007349092734783',
+    'client_secret': 'b32a769b64401744913b11fd1d37655e',
+}
 
 
 @login_required
@@ -40,6 +52,26 @@ def get_shopify_products(request):
             else:
                 break
     return JsonResponse({'images': images}, safe=False)
+
+
+@csrf_exempt
+@login_required
+def get_facebook_long_lived_token(request):
+    """
+    Exchanging short lived token to long lived 60 days
+    :param request:
+    :return:
+    """
+    post_data = json.loads(request.body.decode("utf-8"))
+    FACEBOOK_PARAMS['fb_exchange_token'] = post_data.get('access_token')
+    res_json = requests.get(settings.FACEBOOK_TOKEN_URI, params=FACEBOOK_PARAMS).json()
+    if 'access_token' in res_json:
+        user = AuthAppShopUser.objects.get(myshopify_domain=request.user.myshopify_domain)
+        user.facebook_access_token = res_json.get('access_token')
+        user.facebook_user_id = res_json.get('userID')
+        user.save(update_fields=['facebook_access_token', 'facebook_user_id'])
+        return HttpResponse(user.facebook_access_token, status=200)
+    return HttpResponse(status=400)
 
 
 @login_required
