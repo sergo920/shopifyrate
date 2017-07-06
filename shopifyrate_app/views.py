@@ -10,7 +10,7 @@ from facebookads.adobjects.adaccount import AdAccount
 
 @login_required
 def index(_):
-    with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
+    with open(os.path.join(settings.STATIC_ROOT, 'index.html')) as f:
         return HttpResponse(f.read())
 
 
