@@ -7,7 +7,7 @@ import FacebookButton from "../FacebookButton";
 class Root extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="App container-fluid">
                 <FacebookButton/>
             </div>
         );
